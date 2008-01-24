@@ -1,5 +1,9 @@
+(defpackage sparklines-system
+  (:use #:cl #:asdf))
+
+(in-package #:sparklines-system)
+
 (defsystem sparklines
-  :depends-on (:imago)
-  :components ((:file "sparklines-backend")
-	       (:file "sparklines-imago" :depends-on ("sparklines-backend"))
-	       (:file "sparklines" :depends-on ("sparklines-imago"))))
+  :depends-on (vecto flexi-streams)
+  :components ((:file "sparklines")
+	       (:file "sparklines-vecto" :depends-on ("sparklines"))))
