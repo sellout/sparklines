@@ -5,5 +5,6 @@
 
 (defsystem sparklines
   :depends-on (vecto flexi-streams)
+  :pathname "src/"
   :components ((:file "sparklines")
-	       (:file "sparklines-vecto" :depends-on ("sparklines"))))
+	       (:file "vecto-backend" :depends-on ("sparklines"))))
